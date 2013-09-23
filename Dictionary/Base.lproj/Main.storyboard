@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SX3-t3-Jsk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Dictionary Query View Controller - Dictionary-->
+        <scene sceneID="ZHb-K8-z5K">
+            <objects>
+                <tableViewController id="73w-ca-FMh" customClass="DictionaryQueryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TJt-5m-5Kk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="RbY-nG-AiE">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="73w-ca-FMh" id="RDu-Op-qKc"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="clQ-AY-wOQ">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="clQ-AY-wOQ" id="Xoi-Te-jRS">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dictionary" id="h1B-Ht-Ir8"/>
+                    <connections>
+                        <outlet property="searchBar" destination="RbY-nG-AiE" id="gZ2-WO-1Zv"/>
+                        <outlet property="searchDisplayController" destination="iQf-cr-Oso" id="l2l-XE-z72"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMn-EZ-HlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="iQf-cr-Oso">
+                    <connections>
+                        <outlet property="delegate" destination="73w-ca-FMh" id="Kbn-FB-JSS"/>
+                        <outlet property="searchContentsController" destination="73w-ca-FMh" id="aoN-Gw-ZIG"/>
+                        <outlet property="searchResultsDataSource" destination="73w-ca-FMh" id="chY-Yk-5f5"/>
+                        <outlet property="searchResultsDelegate" destination="73w-ca-FMh" id="E5h-ZD-cAC"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="254" y="276"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AOd-m8-luG">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="SX3-t3-Jsk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i0X-Ut-4eL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="73w-ca-FMh" kind="relationship" relationship="rootViewController" id="0Aq-lT-Wbc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVc-uh-EwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-280" y="276"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
